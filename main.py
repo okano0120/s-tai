@@ -18,10 +18,11 @@ time.sleep(3)
 t = driver.find_element("id", "timing_table")
 tr = t.find_elements(By.TAG_NAME, 'tr')
 
-print(tr[0].text)
-print(tr[1].text)
+# print(tr[0].text)
+# print(tr[1].text)
 
-# print(type(driver))
+print(type(tr))
+
 # for x in inspect.getmembers(driver, inspect.ismethod):
 #   print(x[0])
 # # print(element)
