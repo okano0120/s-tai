@@ -6,6 +6,11 @@ class FetcherType(Enum):
   TEST = 3
 
 class Settings:
+  def __init__(self, controller_name, fetcher_type):
+    # 取得方法は何にするのか
+    self.controller_name = controller_name
+    self.fetcher_type = fetcher_type
+
   # === COMMON ===
   # 何秒間隔でリクエストを行うのか(秒)
   interval_second = 10
@@ -21,7 +26,3 @@ class Settings:
   # テーブルで必要な値 n番目, 0番目始まり
   car_number_order = 2 # TODO: 正しく
   table_orders = [4, 12, 13, 14, 15]
-
-  # === NOT CHANGE ===
-  # 取得方法は何にするのか [手動で変更しない]
-  fetcher_type = FetcherType.HTML
