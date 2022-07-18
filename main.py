@@ -1,7 +1,10 @@
 # === USAGE ===
-# $ python main.py - JSONを利用してデータを取得する
-# $ python main.py html - HTMLを利用してデータを取得する
-# $ python main.py test - テストデータを利用してデータを取得する
+# 1. settings.pyの内容が正しいかどうか確認する
+# 
+# 2. 実行する (実行方法は下記の3通りtoori)
+# - $ python main.py <- JSONを利用してデータを取得する
+# - $ python main.py html <- HTMLを利用してデータを取得する
+# - $ python main.py test <- テストデータを利用してデータを取得する (デバッグ用)
 
 import sys
 from settings import Settings
