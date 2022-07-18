@@ -11,11 +11,11 @@ class Tracker:
 
   def selectFetcher(self, fetcher_type):
     if fetcher_type == FetcherType.HTML:
-      return HtmlFetcher(self.settings)
+      return HtmlFetcher(self.settings.html_fetcher)
     elif fetcher_type == FetcherType.JSON:
-      return JsonFetcher(self.settings)
+      return JsonFetcher(self.settings.json_fetcher)
     elif fetcher_type == FetcherType.TEST:
-      return TestFetcher(self.settings)
+      return TestFetcher(self.settings.test_fetcher)
     else:
       raise ValueError("正しいFetcherを指定してください")
 
