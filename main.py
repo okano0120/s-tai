@@ -11,6 +11,8 @@ from settings import Settings
 from settings import FetcherType
 from fetcher import Fetcher
 from tracker import Tracker
+from test_fetcher import TestPattern
+from test_fetcher import TestFetcher
 
 class BaseController:
   @classmethod
@@ -34,7 +36,13 @@ class TestController(BaseController):
   @classmethod
   def exec(self):
     settings = Settings('test_tracker', FetcherType.TEST)
-    super().exec(settings)
+    settings.interval_second = 1
+    settings.retry_count_limit = 1
+
+    tracker = Tracker(settings)
+
+    TestFetcher.test_pattern = TestPattern.NORMAL
+    tracker.track()
 
 controller_class = None
 if sys.argv[-1] == 'html':

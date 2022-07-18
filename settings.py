@@ -10,6 +10,9 @@ class Settings:
   # 何秒間隔でリクエストを行うのか(秒)
   interval_second = 10
 
+  # リクエストに失敗したときに何回繰り返すのか(3: 3回)
+  retry_count_limit = 3
+
   # 車のID (String)
   car_number = '244'
 
