@@ -10,8 +10,9 @@ class Tracker:
     self.fetcher = self.selectFetcher(settings.fetcher_type)
 
   def selectFetcher(self, fetcher_type):
+    car_number = self.settings.car_number
     if fetcher_type == FetcherType.HTML:
-      return HtmlFetcher(self.settings.html_fetcher)
+      return HtmlFetcher(car_number, self.settings.html_fetcher)
     elif fetcher_type == FetcherType.JSON:
       return JsonFetcher(self.settings.json_fetcher)
     elif fetcher_type == FetcherType.TEST:
