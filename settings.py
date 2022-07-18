@@ -18,11 +18,14 @@ class Settings:
   sect2_orders = [3, 0, 1, 2]
 
   # === HTML Fetcher ===
-  # テーブルで必要な値 n番目, 0番目始まり
+  # テーブルにおける車のIDの順番 n番目, 0番目始まり
   car_number_order = 2 # TODO: 正しく
+  # テーブルにおける取得するデータの順番 n番目, 0番目始まり
   table_orders = [4, 12, 13, 14, 15]
 
   def __init__(self, controller_name, fetcher_type):
-    # 取得方法は何にするのか
+    # コントローラー名 (csv出力時に利用する)
     self.controller_name = controller_name
+
+    # 取得方法は何にするのか
     self.fetcher_type = fetcher_type

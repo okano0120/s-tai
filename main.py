@@ -3,8 +3,6 @@ from settings import FetcherType
 from fetcher import Fetcher
 from tracker import Tracker
 
-# print(Settings.interval_second)
-
 class JSONController:
   @classmethod
   def exec(self):
