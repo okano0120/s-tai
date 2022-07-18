@@ -41,7 +41,6 @@ class Store:
   def make_file_name_by(self, number):
     return '{controller_name}{number}.csv'.format(controller_name=self.controller_name, number=number)
 
-
 def call():
   store = Store('html_tracker')
   store.add_record(['hoge', 'huga'])
@@ -58,4 +57,4 @@ def call():
   time.sleep(3)
   store.add_record(['hoge6', 'huga6'])
 
-call()
+# call()
