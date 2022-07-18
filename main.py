@@ -40,9 +40,7 @@ class TestController(BaseController):
     settings.retry_count_limit = 1
 
     TestFetcher.test_pattern = TestPattern.NORMAL
-
-    tracker = Tracker(settings)
-    tracker.track()
+    super().exec(settings)
 
 controller_class = None
 if sys.argv[-1] == 'html':

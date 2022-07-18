@@ -2,11 +2,13 @@ from html_fetcher import HtmlFetcher
 from json_fetcher import JsonFetcher
 from test_fetcher import TestFetcher
 from settings import FetcherType
+from store import Store
 import time
 import copy
 
 class Tracker:
   def __init__(self, settings):
+    self.store = Store(settings.controller_name)
     self.settings = settings
     self.last_lap = 1
     self.last_record = []
@@ -32,13 +34,15 @@ class Tracker:
 
   def track(self):
     while(True):
-      time.sleep(self.settings.interval_second)
       try:
         record = self.fetcher.fetch()
         self.retry_count = 0
 
         if self.settings.is_full_display:
-          print(record)
+          if self.settings.is_display_fetcher_data:
+            print(record)
+          self.store.add_record(record)
+          time.sleep(self.settings.interval_second)
           continue
 
         if record[0].isdigit() and self.last_lap != self.get_lap_by(record):
@@ -53,13 +57,16 @@ class Tracker:
 
           if self.settings.is_display_fetcher_data:
             print(_record)
+          self.store.add_record(_record)
 
         self.last_record = record
+        time.sleep(self.settings.interval_second)
 
       except:
         if self.settings.retry_count_limit - 1 <= self.retry_count:
           print('エラーが発生しました。また、リトライ上限に達したためシステムを終了します')
           break
+        time.sleep(3)
 
         self.retry_count += 1
         print('エラーが発生しました。Retryします')
