@@ -36,9 +36,6 @@ class TestController(BaseController):
     settings = Settings('test_tracker', FetcherType.TEST)
     super().exec(settings)
 
-# JSONで取得してくる方法
-# JsonController.exec()
-
 controller_class = None
 if sys.argv[-1] == 'html':
   controller_class = HtmlController
