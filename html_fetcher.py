@@ -4,7 +4,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 
 class HtmlFetcher(Fetcher):
-  def __init__(self):
+  def __init__(self, settings):
+    self.settings = settings
     site_url = "https://www.supertaikyu.live/timings/" 
     self.driver = webdriver.Chrome(ChromeDriverManager().install())
     self.driver.get(site_url);
