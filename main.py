@@ -8,7 +8,6 @@ from tracker import Tracker
 class JSONController:
   @classmethod
   def exec(self):
-    print('exec')
     settings = Settings('json_tracker', FetcherType.HTML) # TODO: fix json
     tracker = Tracker(settings)
     tracker.track()
