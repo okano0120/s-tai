@@ -11,15 +11,15 @@ class Store:
     self.create_file(file_path)
 
   def create_file(self, file_path):
-    f = open(file_path, 'w')
-    writer = csv.writer(f, delimiter='\t')
+    f = open(file_path, 'w', newline="")
+    writer = csv.writer(f)
     writer.writerows([])
     f.close()
 
   def add_record(self, record):
     file_path = self.get_file_path()
-    f = open(file_path, 'a')
-    writer = csv.writer(f, delimiter='\t')
+    f = open(file_path, 'a', newline="")
+    writer = csv.writer(f)
     writer.writerow(record)
     f.close()
 
@@ -39,23 +39,23 @@ class Store:
     return i
   
   def make_file_name_by(self, number):
-    return '{controller_name}{number}.tsv'.format(controller_name=self.controller_name, number=number)
+    return '{controller_name}{number}.csv'.format(controller_name=self.controller_name, number=number)
 
-store = Store('html_tracker')
-# print(store.current_file_number)
-# print(store.controller_name)
-# print(store.get_file_name())
-# print(store.get_file_path())
-store.add_record(['hoge', 'huga'])
-time.sleep(3)
-store.add_record(['hoge1', 'huga1'])
-time.sleep(3)
-store.add_record(['hoge2', 'huga2'])
-time.sleep(3)
-store.add_record(['hoge3', 'huga3'])
-time.sleep(3)
-store.add_record(['hoge4', 'huga4'])
-time.sleep(3)
-store.add_record(['hoge5', 'huga5'])
-time.sleep(3)
-store.add_record(['hoge6', 'huga6'])
+
+def call():
+  store = Store('html_tracker')
+  store.add_record(['hoge', 'huga'])
+  time.sleep(3)
+  store.add_record(['hoge1', 'huga1'])
+  time.sleep(3)
+  store.add_record(['hoge2', 'huga2'])
+  time.sleep(3)
+  store.add_record(['hoge3', 'huga3'])
+  time.sleep(3)
+  store.add_record(['hoge4', 'huga4'])
+  time.sleep(3)
+  store.add_record(['hoge5', 'huga5'])
+  time.sleep(3)
+  store.add_record(['hoge6', 'huga6'])
+
+call()
