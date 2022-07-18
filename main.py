@@ -36,12 +36,12 @@ class TestController(BaseController):
   @classmethod
   def exec(self):
     settings = Settings('test_tracker', FetcherType.TEST)
-    settings.interval_second = 1
+    settings.interval_second = 0.5
     settings.retry_count_limit = 1
 
-    tracker = Tracker(settings)
-
     TestFetcher.test_pattern = TestPattern.NORMAL
+
+    tracker = Tracker(settings)
     tracker.track()
 
 controller_class = None

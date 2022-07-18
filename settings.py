@@ -19,6 +19,12 @@ class Settings:
   # 取得中に取得内容を出力するかどうか (Trueの場合: する)
   is_display_fetcher_data = True
 
+  # Lap数に関係なく全ての取得データを記録するかどうか (Trueの場合: する)
+  is_full_display = False
+
+  # lapのインクリメントタイミングが1sec記載の前かあとか(前: before, 後: after)
+  change_timing = 'before'
+
   # === JSON Fetcher ===
   json_fetcher = {
     # Json APIのSect2SectTimeの順番がどうなっているのか
