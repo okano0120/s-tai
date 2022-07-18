@@ -1,4 +1,5 @@
 ## 使い方
+https://github.com/okano0120/s-tai/blob/31c982cecae7babc16bd724d401842d19170ab73/main.py#L1-L7
 
 ## フォルダ構成
 ```
