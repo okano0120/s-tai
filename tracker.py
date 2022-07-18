@@ -14,7 +14,7 @@ class Tracker:
     if fetcher_type == FetcherType.HTML:
       return HtmlFetcher(car_number, self.settings.html_fetcher)
     elif fetcher_type == FetcherType.JSON:
-      return JsonFetcher(self.settings.json_fetcher)
+      return JsonFetcher(car_number, self.settings.json_fetcher)
     elif fetcher_type == FetcherType.TEST:
       return TestFetcher(self.settings.test_fetcher)
     else:

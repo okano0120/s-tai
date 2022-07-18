@@ -19,13 +19,13 @@ class Settings:
   # === JSON Fetcher ===
   json_fetcher = {
     # Json APIのSect2SectTimeの順番がどうなっているのか
-    'sect2_orders': [3, 0, 1, 2]
+    'sect2_orders': [1, 2, 3, 0]
   }
 
   # === HTML Fetcher ===
   html_fetcher = {
     # テーブルにおける車のIDの順番 n番目, 0番目始まり
-    'car_number_order': 2, # TODO: 正しく
+    'car_number_order': 2,
 
     # テーブルにおける取得するデータの順番 n番目, 0番目始まり
     'table_orders': [4, 12, 13, 14, 15]
