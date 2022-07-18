@@ -1,4 +1,6 @@
 from html_fetcher import HtmlFetcher
+from json_fetcher import JsonFetcher
+from test_fetcher import TestFetcher
 from settings import FetcherType
 
 class Tracker:
@@ -11,9 +13,9 @@ class Tracker:
     if fetcher_type == FetcherType.HTML:
       return HtmlFetcher()
     elif fetcher_type == FetcherType.JSON:
-      return HtmlFetcher() # TODO: change
+      return JsonFetcher()
     elif fetcher_type == FetcherType.TEST:
-      return HtmlFetcher() # TODO: change
+      return TestFetcher()
     else:
       raise ValueError("正しいFetcherを指定してください")
 
